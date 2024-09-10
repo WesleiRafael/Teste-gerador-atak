@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "Gerar Dados";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg border-0">
+                <div class="card-header bg-primary text-white text-center">
+                    <h2 class="mb-0">
+                        <i class="fas fa-database me-2"></i>@ViewData["Title"]
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <p class="lead text-center mb-4">
+                        <i class="fas fa-info-circle me-2"></i>Bem-vindo ao ambiente de geração de dados fictícios.
+                    </p>
+                    <p class="text-center mb-5">
+                        Selecione a quantidade de registros que deseja gerar. Os seguintes campos serão criados automaticamente:
+                        <strong>nome, email, telefone</strong> e <strong>data de nascimento</strong>.
+                    </p>
+
+                    
+                    <p class="text-center mb-4" style="font-weight: bold; color: #d9534f; font-size: 1.2em; background-color: #f9f2f4; padding: 10px; border-radius: 5px;">
+                        O valor mínimo de dados é 10 e o máximo é 1000.
+                    </p>
+
+                   
+                    <form asp-action="DownloadDados" method="post" class="mt-4">
+                        <div class="form-group mb-4">
+                            <label for="quantidade" class="form-label">Quantidade de Registros:</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-success text-white">
+                                    <i class="fas fa-hashtag"></i>
+                                </span>
+                                <input type="number" class="form-control" id="quantidade" name="quantidade" placeholder="Informe a quantidade de registros" min="10" max="1000" value="10" required />
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                            <button type="submit" class="btn btn-lg btn-primary">
+                                <i class="fas fa-download me-2"></i> Fazer Download
+                            </button>
+                        </div>
+                    </form>
+
+                    
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-4">
+                        <a href="@Url.Action("EnviarEmail", "Email")" class="btn btn-lg btn-success">
+                            <i class="fas fa-paper-plane me-2"></i> Enviar via Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            @if (ViewBag.Mensagem != null)
+            {
+                <div class="alert alert-info mt-4 text-center">
+                    <i class="fas fa-info-circle"></i> @ViewBag.Mensagem
+                </div>
+            }
+        </div>
+    </div>
+</div>

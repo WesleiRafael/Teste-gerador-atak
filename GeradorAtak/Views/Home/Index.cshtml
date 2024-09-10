@@ -1,0 +1,83 @@
+﻿@*
+
+*@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo ao Sistema</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background-color: #007bff; 
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.3); 
+        }
+
+            .hero-section h2 {
+                font-size: 3rem;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+
+            .hero-section p {
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+            }
+
+        .welcome-card {
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            background-color: #ffffff; 
+        }
+
+        .btn-primary-custom {
+            background-color: #007bff;
+            border-color: #007bff;
+            border-radius: 25px;
+            padding: 12px 24px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero-section">
+        <div class="container">
+            <h2>Bem-vindo ao Sistema!</h2>
+            <p>Você está na página inicial. Acesse as funcionalidades disponíveis.</p>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card welcome-card">
+                    <div class="card-body">
+                        <p class="lead text-center">Bem-vindo ao nosso sistema de geração de dados!</p>
+                        <p class="text-center">Aqui você pode criar registros fictícios com facilidade. Preencha os campos com as informações desejadas, gere uma planilha com os dados e envie-a diretamente por e-mail.</p>
+                        <p class="text-center">Entre ou crie uma conta para acessar todas as funcionalidades.</p>
+                        <div class="text-center">
+                            <a href="@Url.Action("Register", "Usuario")" class="btn btn-primary-custom">
+                                Registrar
+                            </a>
+                            <a href="@Url.Action("Login", "Usuario")" class="btn btn-primary-custom">
+                                Login
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
